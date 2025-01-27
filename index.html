@@ -1,58 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gokulakannan</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
-        }
-        h1 {
-            text-align: center;
-            color: #4CAF50;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        li {
-            margin: 15px 0;
-            font-size: 1.2rem;
-        }
-        a {
-            text-decoration: none;
-            color: #2196F3;
-        }
-        a:hover {
-            color: #0b7dda;
-            text-decoration: underline;
-        }
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            padding-top: 30px;
-        }
-        .repo-description {
-            font-size: 1rem;
-            color: #555;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gokulakannan's Portfolio</title>
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: rgb(12, 96, 107);
+      color: #e0e0e0;
+    }
+
+    
+    header {
+      background: #2c3e50;
+      color: #fff;
+      padding: 10px 0;
+    }
+
+    
+    header nav {
+      width: 100%;
+      padding: 10px 20px;
+      background-color: #34495e;
+      border-radius: 5px;
+    }
+
+    
+    header nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      padding: 0;
+      gap: 15px;
+    }
+
+    header nav ul li {
+      margin: 0;
+    }
+
+
+    header nav ul li a {
+      color: #00d2ff;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0 15px;
+      transition: color 0.3s ease;
+    }
+
+    header nav ul li a:hover {
+      color: #ff006e;
+    }
+
+    .section {
+      padding: 40px 20px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+    #home {
+      background: #2c3e50;
+      color: #fff;
+      text-align: center;
+    }
+
+    #home .intro {
+      padding: 100px 20px;
+    }
+
+    #home h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    #home p {
+      font-size: 1.2rem;
+    }
+
+
+    .project-card {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      background: #2c3e50;
+      padding: 20px;
+      border-radius: 8px;
+      color: #e0e0e0;
+    }
+
+    .project-info h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .project-info a {
+      color: #3498db;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 10px;
+      display: inline-block;
+    }
+
+
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      background-color: #2c3e50;
+      color: #fff;
+    }
+
+
+    footer a {
+      color: #3498db;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 1.2rem;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+
+    @media (max-width: 768px) {
+      header nav ul {
+        justify-content: center;
+      }
+
+      #home h1 {
+        font-size: 2rem;
+      }
+
+      #home p {
+        font-size: 1rem;
+      }
+
+      .project-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .project-info h3 {
+        font-size: 1.3rem;
+      }
+
+      .project-info a {
+        font-size: 1rem;
+      }
+
+      footer a {
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header nav ul {
+        padding: 0 10px;
+        justify-content: center;
+      }
+
+      header nav ul li a {
+        padding: 12px 20px;
+        font-size: 1rem;
+      }
+
+      #home h1 {
+        font-size: 1.8rem;
+      }
+
+      #home p {
+        font-size: 0.9rem;
+      }
+
+      .project-card {
+        padding: 15px;
+        margin-bottom: 15px;
+      }
+
+      .project-info h3 {
+        font-size: 1.2rem;
+      }
+
+      footer a {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1></h1>
-        <p>Welcome to my portfolio! Below you'll find links to various coding projects I've worked on. Feel free to check them out!</p>
-        <ul>
-            <li>
-                <a href="https://github.com/GKCODES-2025/Python-Tkinter-Apps" target="_blank">Python Tkinter Apps</a>
-                <p class="repo-description">A collection of GUI-based applications built with Python and Tkinter.</p>
-            </li>
-        </ul>
+
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#github">GitHub</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="section">
+    <div class="intro">
+      <h1>Hi, I'm Gokulakannan</h1>
+      <p>Welcome to my personal portfolio. I'm a software developer specializing in cross-platform, web, and native applications.</p>
     </div>
+  </section>
+
+
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <h3>
+      I'm a 12th-grade student with a love for coding and technology. Over the years, I have developed skills in a wide range of programming languages and frameworks, including:
+    </h3>
+    <h3>Python, Java, Dart, Flutter, HTML, CSS, JavaScript, SQL, Tkinter</h3>
+    <h3>
+      I am dedicated to creating functional applications, from web to mobile. I constantly look for opportunities to improve my skills and work on exciting projects.
+    </h3>
+  </section>
+
+
+  <section id="projects" class="section">
+    <h2>Projects</h2>
+    <div class="project-card">
+      <div class="project-info">
+        <h3>Python Tkinter Apps</h3>
+        <p>A collection of GUI-based applications built using Python and Tkinter. Explore user-friendly applications and interface design.</p>
+        <a href="https://link-to-project.com" target="_blank">View Project</a>
+      </div>
+    </div>
+  </section>
+
+
+  <footer>
+    <p>Feel free to explore my work and reach out!</p>
+    <div>
+      <a href="https://github.com/GKCODES-2025" target="_blank">GitHub</a> |
+      <a href="https://www.linkedin.com/in/gokulakannan-p-177638348/" target="_blank">LinkedIn</a> |
+      <a href="https://www.instagram.com/__gkcodes__2025/" target="_blank">Instagram</a>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+
 </body>
 </html>
